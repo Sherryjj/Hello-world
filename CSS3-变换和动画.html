@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3-变换和动画</title>
+	<style type="text/css">
+		div{margin:30px;width:200px ; height:200px;background-color: lightgrey;float:left;}
+		.liyi{
+			transform: rotate(7deg);
+			-ms-transform: rotate(7deg);      /*IE9*/
+			-webkit-transform: rotate(7deg);  /*Firefox*/
+			-o-transform: rotate(7deg);       /*Opera*/
+		}
+		.lier{
+			transform: rotateX(30deg);             /*兼容性问题同上*/
+		}
+		.lisan{
+			transform: rotate3d(1,-1,0,60deg);     /*兼容性问题同上*/
+		}
+		.lisi{
+			transform: skew(30deg,10deg);
+		}
+		.lif{
+			transform: scale(1.1,1.1);
+		}
+		.lil{
+			transform: translate(100px,20px);
+		}
+		.liq{
+			transition: width 1s;
+		}
+		.liq:hover{
+			width: 300px;
+		}
+		#lis{
+			width:200px ; height:200px;
+			animation: donghua 5s infinite linear;
+			position: absolute;
+		}
+		@keyframes donghua{
+			0% {background: red;left: 0px;top: 1500px;}
+			25% {background: yellow;left: 200px; top: 1700px;}
+			75% {background: green;left: 0px; top: 1700px;}
+			100% {background: red;left: 0px; top: 1500px;}	
+		}    /*第二个效果如下，360度旋转*/
+		/*@keyframes donghua{
+			from{transform: rotateY(0);}to{transform: rotateY(-360deg);}
+		}*/
+	</style>
+</head>
+<body>
+	<h2>一、CSS3的变换(transform)属性</h2>
+	<h3>1.rotate旋转变换</h3>
+	<div class="liyi">
+		<p>例1.展示最简单的2D旋转<br />rotate(7deg)效果</p>
+	</div>
+	<div class="lier">
+		<p>例2.rotateX(30deg)效果</p>
+	</div>
+	<div class="lisan">
+		<p>例3.rotatesd(x,y,z,deg)效果</p>
+	</div>
+	<h3 style="clear:both">2.skew扭曲变换</h3>
+	<div class="lisi">
+		<p>例4.shew() 2D效果<br />在x轴上向上扭曲30度，y轴上10</p>
+	</div>
+	<h3 style="clear:both">3.scale比例缩放</h3>
+	<div class="lif"><p>等比例</p></div>
+	<h3 style="clear:both">4.translate位移变换</h3>
+	<div class="lil">translate(x,y)位移</div>
+	<h2 style="clear:both;">二、CSS3的渐变(transition)效果</h2>
+	<div class="liq"><p>鼠标移上后在规定时间内变长或宽</p></div>
+	<h2 style="clear:both;">三、使用关键帧(@keyframes)制作不依赖JavaScript的动画效果</h2>
+	<div id="lis"></div>
+	<div style="height:200px;background-color:transparent;"></div>
+</body>
+</html>
