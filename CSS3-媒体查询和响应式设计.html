@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">   
+	<!-- 在手机浏览器身上控制布局 -->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<!-- 通过快捷方式打开时全屏显示 -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+	<!-- 隐藏状态栏 -->
+	<meta name="format-detection" content="telephone=no" />
+	<title>CSS3-媒体查询和响应式设计</title>
+	<style type="text/css">
+		body{margin: 0;}
+		.container{width: 80%;margin: auto;}
+		.header{background-color: #333;}
+		li a{color: white;}     /*公共样式*/
+		@media screen and (max-width: 320px) {
+			.logo{height: 40px;}
+			.header{height: 40px;}
+			li{
+				line-height: 50px;
+				padding: 0 15px 0 15px;
+				display: block;
+				background-color: #333;
+				text-align: center;
+				border-top: 1px solid white;
+			}
+			.logo{display: block;}
+		}
+		@media screen and (min-width: 320px) and (max-width: 765px){
+			.logo{height: 50px;}
+			.header{height: 50px;}
+			li{
+				line-height: 50px;
+				padding: 0 15px 0 15px;
+				display: block;
+				background-color: #333;
+				text-align: center;
+				border-top: 1px solid white;
+			}
+			.logo{display: block;}
+		}
+		@media screen and (min-width: 765px){
+			.logo{height: 60px;}
+			.header{height: 60px;}
+			li{display: block;line-height: 60px;float: left;padding: 0 15px 0 15px;}
+			.logo{display: block;float: left;}
+		}
+	</style>
+</head>
+<body>
+	<div class="header">
+		<div class="container">
+			<img class="logo" src="http://l.ruby-china.org/assets/text_logo-3609989243456a4c620bf2342986b638.png" />
+			<li><a href="#">热门帖子</a></li>
+			<li><a href="#">精华帖子</a></li>
+			<li><a href="#">最新原创</a></li>
+			<li><a href="#">文档翻译</a></li>
+		</div>
+	</div>
+</body>
+</html>
