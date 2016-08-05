@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>弹性盒子设计阅读APP</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"> 
+	<!-- width=device-width ：表示宽度是设备屏幕的宽度
+	initial-scale - 初始的缩放比例  
+	minimum-scale - 允许用户缩放到的最小比例   
+	maximum-scale - 允许用户缩放到的最大比例  
+	user-scalable - 用户是否可以手动缩放 -->
+	<style type="text/css">
+		.vote a{
+			display: block;
+			text-align: center;
+			text-decoration: none;
+			color: #fff;
+			padding: 15px 0;
+			margin: 5px 15px;
+			width: 0;
+			box-flex: 1;       /*子元素占据比例一致*/
+			/*-webkit-box-flex: 1;*/  
+		}
+		.vote{
+			width: 100%;
+			display: box;      /*对父元素设置弹性盒子模型声明*/
+			/*display: -webkit-box;*/      
+			box-pack:justify;  /*设置子元素两端对齐*/
+		}
+		.digg{background-color: #B01B20;}
+		.bury{background: #012753;}
+		.mid{background: #9AA7B3;}      /*添加按钮仅需添加按钮颜色*/
+	</style>
+	<script type="text/javascript" src="js/prefixfree.min.js"></script>
+	<!-- 使用Prefix free 处理CSS3跨浏览器兼容 -->
+</head>
+<body>
+	<h1>CSS常用工具</h1>
+	<p>1.避免编写属性前缀的Prefix free 插件。<br />
+	2.让不同浏览器表现一致性的Normalize。<br />
+	3.应用Grunt自动合并压缩CSS文件。</p>
+	<div class="vote">
+		<a href="#" class="digg">顶</a>
+		<a href="#" class="mid">中立</a>   <!-- 在原来基础上添加链接 -->
+		<a href="#" class="bury">踩</a>
+	</div>
+</body>
+</html>
