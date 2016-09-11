@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML5之canvas鼠标画线</title>
+	<style type="text/css">
+		body {background: grey;}
+		canvas {
+			background: white;
+			margin:50px 150px;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="mycanvas" width="1000px" height="500px"></canvas>
+	<script type="text/javascript">
+		window.onload = function(){
+			var c = document.getElementById('mycanvas');
+			var k = c.getContext('2d');
+			c.onmousedown = function(ev){
+				var ev = ev || window.event;
+				k.moveTo(ev.clientX - c.offsetLeft,ev.clientY - c.offsetTop);
+				document.onmousemove = function(ev){
+					var ev = ev || window.event;
+					k.lineTo(ev.clientX - c.offsetLeft,ev.clientY - c.offsetTop);
+					k.stroke();
+				};
+				document.onmouseup = function(){
+					document.onmousemove = null;
+					document.onmouseup = null;
+				};
+			}
+		}
+	</script>
+</body>
+</html>
