@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML5之canvas方块移动</title>
+	<style type="text/css">
+	    body {background: grey;}
+		#mycanvas {
+			background: white;
+			margin: 30px 150px;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="mycanvas" width="1000px" height="500px"></canvas>
+	<script type="text/javascript">
+		window.onload = function(){
+			var c = document.getElementById('mycanvas');
+			var k = c.getContext('2d');
+			var num = 0;
+			k.fillRect(0,0,100,100);
+			setInterval(function(){
+				num++;
+				k.clearRect(0,0,c.width,c.height);
+				k.fillRect(num,num,100,100);
+			},30);
+		}
+	</script>
+</body>
+</html>
