@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.loading {
+			height: 40px;
+			width: 40px;
+			/* 居中定位和大小设置 */
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			margin-top: -20px;
+			margin-left: -20px;
+			/* 用边框做出3/4圆 */
+			border: 2px solid;
+			border-color: #333 #333  #333 transparent;
+			border-radius: 50%;
+			/* 设置动画 */
+			animation: loading 1s linear both infinite;
+		}
+		/* 定义动画关键帧 */
+		@keyframes loading {
+			0% {transform: rotate(0deg);}
+			100% {transform: rotate(360deg);}
+		}
+	</style>
+</head>
+<body>
+	<div class="loading"></div>
+</body>
+</html>
